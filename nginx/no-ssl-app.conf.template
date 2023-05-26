@@ -5,4 +5,8 @@ server {
   passenger_enabled on;
   passenger_user app;
   passenger_ruby /usr/bin/ruby2.7;
+
+  # WARNING: Do not uncomment this in production.
+  # Uncomment to run in development mode:
+  #passenger_app_env development;
 }
