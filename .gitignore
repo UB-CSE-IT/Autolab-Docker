@@ -12,3 +12,4 @@ init-letsencrypt.sh
 app.conf
 no-ssl-app.conf
 
+/Autolab/vendor
