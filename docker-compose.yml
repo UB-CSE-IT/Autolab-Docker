@@ -38,14 +38,16 @@ services:
 
     # Some volume mappings may seem redundant, but we want to make it explicit
     volumes:
-      - ./Autolab/db:/home/app/webapp/db
       - ./Autolab/config/database.yml:/home/app/webapp/config/database.yml
       - ./Autolab/config/environments/production.rb:/home/app/webapp/config/environments/production.rb
       - ./Autolab/config/autogradeConfig.rb:/home/app/webapp/config/autogradeConfig.rb
-      - ./Autolab/courses:/home/app/webapp/courses
-      - ./Autolab/courseConfig:/home/app/webapp/courseConfig
-      - ./Autolab/assessmentConfig:/home/app/webapp/assessmentConfig
-      - ./Autolab/storage:/home/app/webapp/storage
+      - ../data/db:/home/app/webapp/db
+      - ../data/courses:/home/app/webapp/courses
+      - ../data/courseConfig:/home/app/webapp/courseConfig
+      - ../data/assessmentConfig:/home/app/webapp/assessmentConfig
+      - ../data/storage:/home/app/webapp/storage
+      - ../data/log/autolab:/home/app/webapp/log
+      - ../data/log/nginx:/var/log/nginx
       #- ./ssl/certbot/conf:/etc/letsencrypt
       #- ./ssl/certbot/www:/var/www/certbot
 
@@ -92,7 +94,7 @@ services:
       - MYSQL_USER
       - MYSQL_PASSWORD
     volumes:
-      - mysql-db:/var/lib/mysql
+      - ../data/mysql-db:/var/lib/mysql
 
 #  certbot:
 #    container_name: certbot
@@ -101,5 +103,5 @@ services:
 #      - ./ssl/certbot/conf:/etc/letsencrypt
 #      - ./ssl/certbot/www:/var/www/certbot
 
-volumes:
-  mysql-db:
+#volumes:
+#  mysql-db:
