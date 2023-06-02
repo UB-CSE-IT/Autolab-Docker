@@ -41,7 +41,6 @@ services:
       - ./Autolab/config/database.yml:/home/app/webapp/config/database.yml
       - ./Autolab/config/environments/production.rb:/home/app/webapp/config/environments/production.rb
       - ./Autolab/config/autogradeConfig.rb:/home/app/webapp/config/autogradeConfig.rb
-      - ../data/db:/home/app/webapp/db
       - ../data/courses:/home/app/webapp/courses
       - ../data/courseConfig:/home/app/webapp/courseConfig
       - ../data/assessmentConfig:/home/app/webapp/assessmentConfig
