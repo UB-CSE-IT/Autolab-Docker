@@ -54,7 +54,9 @@ update-repos:
 
 .PHONY: set-perms
 set-perms:
+	docker exec autolab touch /home/app/webapp/log/production.log
 	docker exec autolab chown -R app:app /home/app/webapp
+	docker exec autolab chmod 0664 /home/app/webapp/log/production.log
 
 .PHONY: create-user
 create-user:
