@@ -46,7 +46,8 @@ db-migrate:
 
 .PHONY: update-repos
 update-repos:
-	@echo Pulling Autolab and Tango repositories.
+	@echo Pulling Autolab-Docker, Autolab, and Tango repositories.
+	git checkout master && git pull origin master
 	cd ./Autolab && git checkout master && git pull origin master
 	cd ..
 	cd ./Tango && git checkout master && git pull origin master
