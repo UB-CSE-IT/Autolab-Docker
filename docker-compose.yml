@@ -17,6 +17,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./Tango/config.py:/opt/TangoService/Tango/config.py
       - ./Tango/volumes:/opt/TangoService/Tango/volumes
+      - ../data/log/tango:/var/log/tango/
+      - ../data/log/tangonginx:/var/log/nginx
     environment:
       - DOCKER_DEPLOYMENT
       - RESTFUL_KEY
