@@ -49,6 +49,8 @@ services:
       - ../data/storage:/home/app/webapp/storage
       - ../data/log/autolab:/home/app/webapp/log
       - ../data/log/nginx:/var/log/nginx
+      # This allows us to update the announcement banner without restarting Autolab:
+      - ./Autolab/app/views/home/_topannounce.html.erb:/home/app/webapp/app/views/home/_topannounce.html.erb
       #- ./ssl/certbot/conf:/etc/letsencrypt
       #- ./ssl/certbot/www:/var/www/certbot
 
