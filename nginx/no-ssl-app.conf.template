@@ -5,6 +5,7 @@ server {
   passenger_enabled on;
   passenger_user app;
   passenger_ruby /usr/bin/ruby2.7;
+  client_max_body_size 100M;
 
   # WARNING: Do not uncomment this in production.
   # Uncomment to run in development mode:
