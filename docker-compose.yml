@@ -3,6 +3,8 @@ services:
   redis:
     container_name: redis
     image: redis:latest
+    ports:
+      - '127.0.0.1:6379:6379'
     deploy:
       replicas: 1
     restart: unless-stopped
@@ -93,6 +95,8 @@ services:
     container_name: mysql
     image: mysql/mysql-server:latest
     restart: unless-stopped
+    ports:
+      - "127.0.0.1:3306:3306"
     environment:
       - MYSQL_DATABASE
       - MYSQL_ROOT_PASSWORD
