@@ -7,6 +7,14 @@ server {
   passenger_ruby /usr/bin/ruby2.7;
   client_max_body_size 100M;
 
+  # Allow a longer queue for bursts of requests (default is 100)
+  passenger_max_request_queue_size 250;
+
+  # Use long timeouts for regrade all
+  proxy_read_timeout 1200;
+  proxy_connect_timeout 1200;
+  proxy_send_timeout 1200;
+
   # WARNING: Do not uncomment this in production.
   # Uncomment to run in development mode:
   #passenger_app_env development;
