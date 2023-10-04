@@ -52,6 +52,7 @@ services:
       - ../data/courseConfig:/home/app/webapp/courseConfig
       - ../data/assessmentConfig:/home/app/webapp/assessmentConfig
       - ../data/storage:/home/app/webapp/storage
+      - ../data/attachments:/home/app/webapp/attachments
       - ../data/log/autolab:/home/app/webapp/log
       - ../data/log/nginx:/var/log/nginx
       # This allows us to update the announcement banner without restarting Autolab:
