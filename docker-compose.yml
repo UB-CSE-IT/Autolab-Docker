@@ -45,9 +45,10 @@ services:
 
     # Some volume mappings may seem redundant, but we want to make it explicit
     volumes:
-      - ./Autolab/config/database.yml:/home/app/webapp/config/database.yml
-      - ./Autolab/config/environments/production.rb:/home/app/webapp/config/environments/production.rb
-      - ./Autolab/config/autogradeConfig.rb:/home/app/webapp/config/autogradeConfig.rb
+#      - ./Autolab/config/database.yml:/home/app/webapp/config/database.yml
+#      - ./Autolab/config/environments/production.rb:/home/app/webapp/config/environments/production.rb
+#      - ./Autolab/config/autogradeConfig.rb:/home/app/webapp/config/autogradeConfig.rb
+      - ./Autolab/config:/home/app/webapp/config
       - ../data/courses:/home/app/webapp/courses
       - ../data/courseConfig:/home/app/webapp/courseConfig
       - ../data/assessmentConfig:/home/app/webapp/assessmentConfig
@@ -56,7 +57,7 @@ services:
       - ../data/log/autolab:/home/app/webapp/log
       - ../data/log/nginx:/var/log/nginx
       # This allows us to update the announcement banner without restarting Autolab:
-      - ./Autolab/app/views/home/_topannounce.html.erb:/home/app/webapp/app/views/home/_topannounce.html.erb
+      - ./Autolab/app/views/home:/home/app/webapp/app/views/home
       #- ./ssl/certbot/conf:/etc/letsencrypt
       #- ./ssl/certbot/www:/var/www/certbot
 
